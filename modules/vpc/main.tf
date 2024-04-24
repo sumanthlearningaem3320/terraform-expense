@@ -14,23 +14,23 @@ resource "aws_subnet" "public" {
 }
 resource "aws_subnet" "web" {
   vpc_id            = aws_vpc.main.id
-  count = length(var.public_subnets)
-  cidr_block        = var.public_subnets[count.index]
+  count = length(var.web_subnets)
+  cidr_block        = var.web_subnets[count.index]
   tags = merge(var.tags, {Name = "vpc-web-subnets"})
   availability_zone = var.azs[count.index]
 }
 resource "aws_subnet" "app" {
   vpc_id            = aws_vpc.main.id
-  count = length(var.public_subnets)
-  cidr_block        = var.public_subnets[count.index]
+  count = length(var.app_subnets)
+  cidr_block        = var.app_subnets[count.index]
   tags = merge(var.tags, {Name = "vpc-app-subnets"})
   availability_zone = var.azs[count.index]
 
 }
 resource "aws_subnet" "db" {
   vpc_id            = aws_vpc.main.id
-  count = length(var.public_subnets)
-  cidr_block        = var.public_subnets[count.index]
+  count = length(var.db_subnets)
+  cidr_block        = var.db_subnets[count.index]
   tags = merge(var.tags, {Name = "vpc-db-subnets"})
   availability_zone = var.azs[count.index]
 
