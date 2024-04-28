@@ -12,7 +12,7 @@ app_subnets = ["10.10.4.0/24","10.10.5.0/24"]
 db_subnets = ["10.10.6.0/24","10.10.7.0/24"]
 azs = ["us-east-1a","us-east-1b"]
 
-account_id = "684832353742"
-default_vpc_id = "vpc-01e5d6a9f3827249a"
-default_route_table  = "rtb-0a68156165c8427d3"
+account_id = "791028085567"
+default_vpc_id = "vpc-0c75913009a169381"
+default_route_table  = "rtb-0ab361ceaf70ad431"
 default_cidr_block = "172.31.0.0/16"
