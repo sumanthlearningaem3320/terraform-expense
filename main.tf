@@ -14,3 +14,16 @@ module "vpc" {
   default_cidr_block = var.default_cidr_block
 }
 
+module "rds" {
+  source = "./modules/rds"
+  subnets = module.vpc.db_subnets
+  env = var.env
+  rds_allocate_storage = var.rds_allocate_storage
+  rds_engine = var.rds_engine
+  rds_engine_version = var.rds_engine_version
+  rds_instnce_class = var.rds_instnce_class
+  tags = var.tags
+  sg_cidr = var.app_subnets
+  vpc_id =  module.vpc.vpc_id
+}
+
